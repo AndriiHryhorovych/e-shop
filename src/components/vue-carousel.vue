@@ -33,7 +33,6 @@ export default {
 <style lang="scss" scoped>
 .carousel-slide img{
   width: 100%;
-
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
   margin: 0 0 20px;
 }

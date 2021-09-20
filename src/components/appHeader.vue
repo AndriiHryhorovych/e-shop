@@ -1,15 +1,18 @@
 <template>
     <div class="header d-flex align-items-center">
         <div class="container">
-            <div class="row">
+            <div class="row d-flex align-items-center">
                 <div class="col-2 title">
                     <router-link to="/" class="title-link">eShop</router-link>
                 </div>
-                <div class="col-4">
-
+                <div class="col-4 d-flex search">
+                    <b-nav-form form-class="d-flex">
+                        <b-form-input size="sm" class="mr-sm-2" placeholder="Пошук"></b-form-input>
+                        <b-button size="sm" class="my-2 my-sm-0 search-button" type="submit">Шукати</b-button>
+                    </b-nav-form>
                 </div>
-                <div class="col-6">
-                    <ul class="menu d-flex justify-content-between align-items-center">
+                <div class="col-4 col-6">
+                    <ul class="menu d-flex justify-content-end align-items-center">
                         <li>
                             <router-link to="/catalog" class="menu-item">Каталог</router-link>
                         </li>
@@ -56,6 +59,7 @@
     color: white;
     font-size: 16px;
     transition: 0.3s;
+    margin: 0 15px;
 }
 .menu a:hover{
     color: gray;
@@ -69,5 +73,15 @@
 .menu{
      margin: 0 0;
      padding: 0 16px;
+}
+.search {
+ list-style-type: none;
+}
+.search-button {
+    background-color: rgb(240, 134, 93);
+    margin: 0 0 0 -5px;
+    border-color: rgb(240, 134, 93);
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
 }
 </style>
