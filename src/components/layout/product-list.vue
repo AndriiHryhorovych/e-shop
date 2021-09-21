@@ -1,7 +1,6 @@
 <template>
   <div>
-    <h1>Product list </h1>
-    <b-button variant="success" @click="getProducts">Test</b-button>
+    <!-- <b-button variant="success" @click="getProducts">Test</b-button> -->
     <div class="row">
          <div v-for="item in products" :key="item.id" class="col-3" >
             <productItem :product="item" />
@@ -23,7 +22,7 @@ export default {
   },
   methods: {
     getProducts() {
-      fetch("https://fakestoreapi.com/products?limit=5")
+      fetch("https://fakestoreapi.com/products?limit=4")
         .then((res) => {
           return res.json();
         })

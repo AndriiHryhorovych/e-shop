@@ -3,13 +3,11 @@
         <div class="thumb">
             <img :src="product.image" alt="">
         </div>
-        <h4>
             <router-link :to="{ name: 'Product', params: { id: product.id } }  "  >
                 {{product.title}}
             </router-link>
-            </h4>
         <div class="price">
-            <strong> {{ product.price }} </strong>
+            <strong> {{ product.price }} USD</strong>
         </div>
     </div>
 </template>
@@ -27,5 +25,17 @@
         max-width: 100%;
         height: 140px;
     }
+}
+.price {
+    text-align: center;
+    font-family: Roboto;
+  font-size: 22px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #009d35;
 }
 </style>
