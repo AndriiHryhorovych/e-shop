@@ -78,9 +78,9 @@
  list-style-type: none;
 }
 .search-button {
-    background-color: rgb(240, 134, 93);
+    background-color: #ff842c;
     margin: 0 0 0 -5px;
-    border-color: rgb(240, 134, 93);
+    border-color: #ff842c;
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
 }

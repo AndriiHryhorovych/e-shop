@@ -5,21 +5,36 @@
         <div class="col-12 carousel">
           <vue-carousel />
         </div>
+        <productList />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import VueCarousel from '../components/vue-carousel.vue'
+import VueCarousel from '../components/vue-carousel.vue';
+import productList from '@/components/layout/product-list.vue';
 // @ is an alias to /src
 
 
 export default {
   name: 'Home',
   components: {
-    VueCarousel
+    VueCarousel,
+    productList,
     
+  },
+  data(){
+    return {
+
+    };
+
+  },
+  methods:{
+    
+  },
+  mounted() {
+
   }
 }
 </script>
