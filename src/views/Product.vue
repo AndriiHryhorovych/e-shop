@@ -16,14 +16,23 @@
 
                 </div>
             </div>
-            <!-- <productList /> -->
+            <div class="product_more-title">
+                Ще товари тієї ж категорії
+            </div>
+            <productList />
         </div> 
 
     </div>
 </template>
 
 <script>
+    import productList from '@/components/layout/product-list.vue';
+
     export default {
+        components: {
+            productList,
+    
+        },
         data () {
             return {
                 product: {},
@@ -90,6 +99,18 @@
   background-color: #ff842c;
    border-color: #ff842c;
     }
+}
+.product_more-title {
+    margin: 0 0 57px 3px;
+  font-family: Roboto;
+  font-size: 32px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: start;
+  color: #000;
 }
  
 </style>
