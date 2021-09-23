@@ -16,7 +16,7 @@ const routes = [
     component: Home
   },
   {
-    path: '/catalog',
+    path: '/catalog/:category',
     name: 'Catalog',
     component: Catalog
     // route level code-splitting

@@ -14,7 +14,7 @@
                 <div class="col-4 col-6">
                     <ul class="menu d-flex justify-content-end align-items-center">
                         <li>
-                            <router-link to="/catalog" class="menu-item">Каталог</router-link>
+                            <router-link to="/catalog/all" class="menu-item">Каталог</router-link>
                         </li>
                         <li>
                             <router-link to="/payments" class="menu-item">Оплата</router-link>
