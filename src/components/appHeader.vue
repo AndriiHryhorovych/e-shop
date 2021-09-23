@@ -23,7 +23,9 @@
                             <router-link to="/delivery" class="menu-item">Доставка</router-link>
                         </li>
                         <li>
-                            <router-link to="/cart" class="menu-item">Корзина</router-link>
+                            <router-link to="/cart" class="menu-item">      
+                                <img src="@/assets/fluent_cart.png" alt="">
+                            </router-link>
                         </li>
                     </ul>
                 </div>
@@ -64,6 +66,11 @@
 .menu a:hover{
     color: gray;
     transition: 0.3s;
+    img {
+        transform: scale(1.2);
+        transition: 0.3s;
+    
+    }
     
 }
 .menu li{
