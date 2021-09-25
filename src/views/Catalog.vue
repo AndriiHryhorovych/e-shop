@@ -7,10 +7,12 @@
                         <div class="category-title">
                             Товари за категоріями
                         </div> 
+                        <div class="line-1">
+                        </div>
                         <ul class="catalog-categories">
                             <li>
                                 <router-link :to="{name: 'Catalog', params: {category: 'all'}}">
-                                    Всі товари
+                                    <strong>Всі товари</strong>
                                 </router-link>
                             </li>
                             <li v-for="(c, i) in categories" :key = "c + i">
@@ -21,8 +23,15 @@
                         </ul>   
                     </div>
                 </div>
-                <div class="col-9">
-                    <div v-for="item in products" :key="item.id" class="col-3" >
+                
+                <div class="col-9 d-flex flex-wrap">
+                    <div v-if=" this.currentCategory == 'all' "  class="current-category col-9">
+                        Всі товари
+                    </div> 
+                    <div v-else class="current-category col-9">
+                        {{this.currentCategory}} 
+                    </div>             
+                    <div v-for="item in products" :key="item.id" class="col-4" >
                         <productItem :product="item" />
                     </div>
                 </div>
@@ -107,6 +116,49 @@ export default {
     margin:  77px 0 8px 0;
   font-family: Roboto;
   font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000;
+}
+.line-1 {
+  width: 100%;
+  height: 1px;
+  flex-grow: 0;
+  margin: 8px 0 15px;
+  background-color: #000;
+}
+.catalog-categories {
+    list-style-type: none;
+    
+    margin-left: -30px;
+    a {
+        text-decoration: none;
+        font-family: Roboto;
+        font-size: 18px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.9;
+        letter-spacing: normal;
+        text-align: left;
+        color: #000;
+        padding-bottom: 15px;
+        transition: 0.5s;
+    }
+    a:hover{
+        font-weight: 900;
+        transition: 0.5s;
+    }
+    
+}
+.current-category {
+    margin: 69px 0;
+  font-family: Roboto;
+  font-size: 36px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;

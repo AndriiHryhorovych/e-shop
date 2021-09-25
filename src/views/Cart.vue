@@ -10,7 +10,7 @@
                         На жаль, Ви ще нічого не додали до кошика
                     </div>
                     <div id="button-to-catalog">
-                        <b-button href="/catalog">До каталогу</b-button>
+                        <b-button href="/catalog/all">До каталогу</b-button>
                     </div>   
                 </div>
             </div>
