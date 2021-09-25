@@ -19,27 +19,42 @@
             <div class="product_more-title">
                 Ще товари тієї ж категорії
             </div>
-            <productList />
+            <!-- <productList /> -->
+            <div class="row">
+                <div v-for="item in products" :key="item.id" class="col-3" >
+                    <productItem :product="item" />
+                </div>
+            </div> 
         </div> 
 
     </div>
 </template>
 
 <script>
-    import productList from '@/components/layout/product-list.vue';
+    // import productList from '@/components/layout/product-list.vue';
+    import productItem from "@/components/lists/product-list-item.vue";
 
     export default {
+        // props: ['productCategory'],
         components: {
-            productList,
+            // productList,
+            productItem,
     
         },
         data () {
             return {
                 product: {},
+                products: [],
             };
         },
+        // computed: {
+        //     currentCategory() {
+        //         return productCategory;
+
+        //     },
+        // },
         methods: {
-            getProduct(){
+            getProduct (){
                 var id= this.$route.params.id;
                 fetch("https://fakestoreapi.com/products/"+id)
             .then(res=> {
@@ -50,9 +65,21 @@
                 this.product = json;
             })
             },
+
+            getProductByCategory () {
+            // console.log(this.product.category)
+            fetch("https://fakestoreapi.com/products/category/" + 'jewelery')
+            .then((res) => {
+            return res.json();
+            })
+            .then(json => {
+                this.products = json;
+            });
+        }
         },
         mounted() {
             this.getProduct();
+            this.getProductByCategory();
         }
     }
 </script>

@@ -1,5 +1,6 @@
 <template>
-    <div class="cart-empty">
+<div>
+    <div v-if="3>2"  class="cart-empty">
         <div class="container">
             <div class="row">
                 <div class="col-12 d-flex flex-column justify-content-center align-items-center">
@@ -16,6 +17,10 @@
             </div>
         </div>
     </div>
+    <div v-else class="cart-full">
+        повний кошик
+    </div>
+</div>
 </template>
 
 <script>
@@ -76,12 +81,18 @@
         letter-spacing: normal;
         text-align: center;
         color: #fff;
+        transition: 0.3s;
     }
-    
-}
+    .btn:hover {
+        border-color: gray;
+        background-color: gray;
+        transition: 0.3s;
+    }
+
 .button-to-catalog {
     text-align: center;
     
     
+}
 }
 </style>

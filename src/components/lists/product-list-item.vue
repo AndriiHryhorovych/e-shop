@@ -1,24 +1,24 @@
 <template>
     <div class="product-item">
         <div class="thumb">
-             <router-link class="link" :to="{ name: 'Product', params: { id: product.id } } "  >
-            <img :src="product.image" alt="">
-            <br>
-            <div class="product-title">
-                {{product.title}}
-            </div>
-                
+            <router-link class="link" :to="{ name: 'Product', params: { id: product.id, productCategory: product.category } } "  >
+                <img :src="product.image" alt="">
+                <br>
+                <div class="product-title">
+                    {{product.title}}
+                </div>
             </router-link>
-            </div>
+        </div>
         <div class="price">
             <strong> {{ product.price }} USD</strong>
         </div>
         <div class="button-to-cart">
-            <b-button v-b-modal.modal-center >До кошика</b-button>
+            <b-button href="/cart">До кошика</b-button>
+            <!-- <b-button v-b-modal.modal-center >До кошика</b-button>
 
             <b-modal id="modal-center" centered title="Модальне вікно">
                 <p class="my-4">Товар в кошику</p>
-            </b-modal>
+            </b-modal> -->
         </div>
     </div>
 </template>
@@ -46,7 +46,7 @@
     text-decoration-line: none;
     height: 42px;
   flex-grow: 0;
-  margin: 49px 0 15px;
+  margin: 37px 20px 25px;
   font-family: Roboto;
   font-size: 18px;
   font-weight: normal;
@@ -75,16 +75,21 @@
 }
 .button-to-cart {
     text-align: center;
-    button {
+    .btn {
         height: 56px;
         flex-grow: 0;
-        margin: 13px 46px 149px 46px;
+        margin: 13px 46px 70px 46px;
         padding: 15px 39px 15px 38px;
         border-radius: 6px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);
         background-color: #ff842c;
         border-color: #ff842c;
+        transition: 0.3s;   
     }
-    
+    .btn:hover{
+        background-color: gray !important;
+        border-color: gray;
+        transition: 0.3s;
+    }
 }
 </style>
