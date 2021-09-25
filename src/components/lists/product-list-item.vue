@@ -43,7 +43,7 @@
 }
 
 .product-title {
-    text-decoration-line: none;
+    text-decoration-line: none !important;
     height: 42px;
   flex-grow: 0;
   margin: 37px 20px 25px;
@@ -57,7 +57,7 @@
   text-align: center;
   color: #000;
   a {
-      text-decoration: none;
+      text-decoration: none !important;
   }
 }
 .price {

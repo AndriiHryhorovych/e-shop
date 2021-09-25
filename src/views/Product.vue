@@ -11,7 +11,7 @@
                         <span>{{product.price}} USD</span>
                     </div>
                     <div id="button-to-cart">
-                        <b-button href="/cart">До кошика</b-button>
+                        <b-button @click="addToCart(product.id)"  href="/cart">До кошика</b-button>
                     </div>  
 
                 </div>
@@ -63,23 +63,24 @@
             .then(json=> {
                 console.log(json);
                 this.product = json;
+                this.getProductByCategory();
             })
             },
 
             getProductByCategory () {
             // console.log(this.product.category)
-            fetch("https://fakestoreapi.com/products/category/" + 'jewelery')
+            fetch("https://fakestoreapi.com/products/category/" + this.product.category + "?limit=4")
             .then((res) => {
             return res.json();
             })
             .then(json => {
                 this.products = json;
+                
             });
         }
         },
         mounted() {
             this.getProduct();
-            this.getProductByCategory();
         }
     }
 </script>
@@ -117,14 +118,20 @@
     }
     .btn {
         width: 377px;
-  height: 56px;
-  flex-grow: 0;
-  margin: 18px 0 0 0;
-  padding: 15px 77px 15px 75px;
-  border-radius: 6px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);
-  background-color: #ff842c;
-   border-color: #ff842c;
+        height: 56px;
+        flex-grow: 0;
+        margin: 18px 0 0 0;
+        padding: 15px 77px 15px 75px;
+        border-radius: 6px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);
+        background-color: #ff842c;
+        border-color: #ff842c;
+        transition: 0.3s;
+    }
+    .btn:hover {
+        background-color: gray;
+        border-color: gray;
+        transition: 0.3s;
     }
 }
 .product_more-title {
