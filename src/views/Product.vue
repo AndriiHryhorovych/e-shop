@@ -47,12 +47,6 @@
                 products: [],
             };
         },
-        // computed: {
-        //     currentCategory() {
-        //         return productCategory;
-
-        //     },
-        // },
         methods: {
             getProduct (){
                 var id= this.$route.params.id;
@@ -75,7 +69,6 @@
             })
             .then(json => {
                 this.products = json;
-                
             });
         }
         },
