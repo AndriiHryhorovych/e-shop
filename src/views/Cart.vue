@@ -29,7 +29,7 @@
                     <img :src="product.image" alt="рисунок">
                 </div>
                 <div class="col-8 d-flex align-items-center">
-                    <span>{{product.title}}назва</span>
+                    <span>{{product.title}}</span>
                 </div>
                 <div class="col-2 price d-flex justify-content-center align-items-center">
                     {{product.price}} USD
@@ -49,27 +49,33 @@
                     <span>Вас також можуть зацікавити</span>
                 </div>
             </div>
-            <productList />
+            <div class="row">
+                <div v-for="item in products" :key="item.id" class="col-3" >
+                    <productItem :product="item" />
+                </div>
+            </div>
         </div>
     </div>
 </div>
 </template>
 
 <script>
-import productList from '@/components/layout/product-list.vue';
+// import productList from '@/components/layout/product-list.vue';
+import productItem from "@/components/lists/product-list-item.vue";
 export default {
     components: {
-        productList,
+        // productList,
+        productItem,
     },
      data () {
         return {
             product: {},
-            // products: [],
+            products: [],
         };
     },
     methods: {
         getProduct (){
-            var id=3;// this.$route.params.id;
+            var id=5;// this.$route.params.id;
             fetch("https://fakestoreapi.com/products/"+id)
         .then(res=> {
             return res.json()
@@ -77,20 +83,20 @@ export default {
         .then(json=> {
             console.log(json);
             this.product = json;
-            // this.getProductByCategory();
+            this.getProductByCategory();
         })
         },
 
-    //     getProductByCategory () {
-    //     // console.log(this.product.category)
-    //     fetch("https://fakestoreapi.com/products/category/" + this.product.category + "?limit=4")
-    //     .then((res) => {
-    //     return res.json();
-    //     })
-    //     .then(json => {
-    //         this.products = json;
-    //     });
-    // }
+        getProductByCategory () {
+        // console.log(this.product.category)
+            fetch("https://fakestoreapi.com/products/category/" + this.product.category + "?limit=4")
+        .then((res) => {
+            return res.json();
+        })
+        .then(json => {
+            this.products = json;
+        });
+        }
     },
     mounted() {
         this.getProduct();
