@@ -26,13 +26,13 @@
             </div>
             <div class="row product-in-cart">
                 <div class="col-2 d-flex justify-content-center align-items-center">
-                    рисунок
+                    <img :src="product.image" alt="рисунок">
                 </div>
                 <div class="col-8 d-flex align-items-center">
-                    назва
+                    <span>{{product.title}}назва</span>
                 </div>
-                <div class="col-2 d-flex justify-content-center align-items-center">
-                    ціна
+                <div class="col-2 price d-flex justify-content-center align-items-center">
+                    {{product.price}} USD
                 </div>
             </div>
             <div class="row button-to-order d-flex justify-content-center align-items-center">
@@ -44,15 +44,58 @@
                 <div class="col-4">
                 </div>
             </div>
+            <div class="row">
+                <div class="col-12 product-other">
+                    <span>Вас також можуть зацікавити</span>
+                </div>
+            </div>
+            <productList />
         </div>
     </div>
 </div>
 </template>
 
 <script>
-    export default {
-        
+import productList from '@/components/layout/product-list.vue';
+export default {
+    components: {
+        productList,
+    },
+     data () {
+        return {
+            product: {},
+            // products: [],
+        };
+    },
+    methods: {
+        getProduct (){
+            var id=3;// this.$route.params.id;
+            fetch("https://fakestoreapi.com/products/"+id)
+        .then(res=> {
+            return res.json()
+        })
+        .then(json=> {
+            console.log(json);
+            this.product = json;
+            // this.getProductByCategory();
+        })
+        },
+
+    //     getProductByCategory () {
+    //     // console.log(this.product.category)
+    //     fetch("https://fakestoreapi.com/products/category/" + this.product.category + "?limit=4")
+    //     .then((res) => {
+    //     return res.json();
+    //     })
+    //     .then(json => {
+    //         this.products = json;
+    //     });
+    // }
+    },
+    mounted() {
+        this.getProduct();
     }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -140,6 +183,33 @@
         padding: 14px 43px 15px 10px;
         border-radius: 6px;
         background-color: #f5f5f5;
+        img {
+            max-height: 157px;
+            padding: 18px 32px;
+            background-color: #fff;
+        }
+        span {
+            font-family: Roboto;
+            font-size: 24px;
+            font-weight: bold;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            text-align: left;
+            color: #000;
+        }
+        .price {
+            font-family: Roboto;
+            font-size: 28px;
+            font-weight: 500;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            text-align: right;
+            color: #009d35;
+        }
     }
     .button-to-order {
         text-align: center;
@@ -171,6 +241,18 @@
             border-color: gray !important;
             transition: 0.3s;
         }
+    }
+    .product-other {
+        margin: 0 0 75px 1px;
+  font-family: Roboto;
+  font-size: 32px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000;
     }
 
     
