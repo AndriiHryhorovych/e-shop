@@ -3,6 +3,19 @@
     <appHeader />
     <router-view/>
     <appFooter />
+
+    <div>
+      <b-modal id="bv-modal-example" hide-footer>
+        <div class="d-block text-center">
+          <div class="Circle">
+            <img src="assets/carbon.svg">
+          </div>
+          <h3>Товар в кошику</h3>
+        </div>
+        <b-button class="mt-3" block @click="$bvModal.hide('bv-modal-example')">Закрити</b-button>
+      </b-modal>
+    </div>
+
   </div>
 </template>
 

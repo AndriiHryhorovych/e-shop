@@ -75,7 +75,7 @@ export default {
     },
     methods: {
         getProduct (){
-            var id=localStorage.id;
+            var id=5; //window.localStorage.id;
             fetch("https://fakestoreapi.com/products/"+id)
         .then(res=> {
             return res.json()
