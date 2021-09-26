@@ -14,11 +14,6 @@
         </div>
         <div class="button-to-cart">
             <b-button @click="addToCart(product.id)">До кошика</b-button>
-            <!-- <b-button v-b-modal.modal-center >До кошика</b-button>
-
-            <b-modal id="modal-center" centered title="Модальне вікно">
-                <p class="my-4">Товар в кошику</p>
-            </b-modal> -->
         </div>
     </div>
 </template>
@@ -55,17 +50,17 @@
 .product-title {
     text-decoration-line: none !important;
     height: 42px;
-  flex-grow: 0;
-  margin: 37px 20px 25px;
-  font-family: Roboto;
-  font-size: 18px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: center;
-  color: #000;
+    flex-grow: 0;
+    margin: 37px 20px 25px;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #000;
   a {
       text-decoration: none !important;
   }
