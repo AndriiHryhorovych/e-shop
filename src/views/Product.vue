@@ -11,7 +11,7 @@
                         <span>{{product.price}} USD</span>
                     </div>
                     <div id="button-to-cart">
-                        <b-button @click="addToCart(product.id)"  href="/cart">До кошика</b-button>
+                        <b-button @click="addToCart(product.id)">До кошика</b-button>
                     </div>  
 
                 </div>
@@ -35,7 +35,7 @@
     import productItem from "@/components/lists/product-list-item.vue";
 
     export default {
-        // props: ['productCategory'],
+        // props: ['product'],
         components: {
             // productList,
             productItem,
@@ -51,26 +51,33 @@
             getProduct (){
                 var id= this.$route.params.id;
                 fetch("https://fakestoreapi.com/products/"+id)
-            .then(res=> {
-                return res.json()
-            })
-            .then(json=> {
-                console.log(json);
-                this.product = json;
-                this.getProductByCategory();
-            })
+                .then(res=> {
+                    return res.json()
+                })
+                .then(json=> {
+                    console.log(json);
+                    this.product = json;
+                    this.getProductByCategory();
+                })
             },
-
             getProductByCategory () {
-            // console.log(this.product.category)
-            fetch("https://fakestoreapi.com/products/category/" + this.product.category + "?limit=4")
-            .then((res) => {
-            return res.json();
-            })
-            .then(json => {
-                this.products = json;
-            });
-        }
+                fetch("https://fakestoreapi.com/products/category/" + this.product.category + "?limit=4")
+                .then((res) => {
+                    return res.json();
+                })
+                .then(json => {
+                    this.products = json;
+                });
+            },
+            addToCart(product_id) {
+                var item = {
+                    count: 1,
+                    id: product_id,
+                };
+                window.localStorage.setItem("cart",JSON.stringify(item));
+                this.$bvModal.show("bv-modal-example");
+                alert("Товар додано " + product_id);
+            },
         },
         mounted() {
             this.getProduct();

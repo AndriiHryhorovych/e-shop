@@ -13,7 +13,7 @@
             <strong> {{ product.price }} USD</strong>
         </div>
         <div class="button-to-cart">
-            <b-button href="/cart">До кошика</b-button>
+            <b-button @click="addToCart(product.id)">До кошика</b-button>
             <!-- <b-button v-b-modal.modal-center >До кошика</b-button>
 
             <b-modal id="modal-center" centered title="Модальне вікно">
@@ -24,10 +24,20 @@
 </template>
 
 <script>
-
     export default {
-        props:['product']
-    }
+        props:['product'],
+        methods: {
+            addToCart(product_id) {
+                var item = {
+                    count: 1,
+                    id: product_id,
+                };
+                window.localStorage.setItem("cart",JSON.stringify(item));
+                this.$bvModal.show("bv-modal-example");
+                alert("Товар додано " + product_id);
+            },
+        },
+    };
 </script>
 
 <style lang="scss" scoped>

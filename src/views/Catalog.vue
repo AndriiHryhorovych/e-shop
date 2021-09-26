@@ -96,7 +96,7 @@ export default {
             .then(json => {
                 this.products = json;
             });
-        }
+        },
     },
     mounted () {
         this.getCategories();

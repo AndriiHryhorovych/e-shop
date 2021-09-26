@@ -75,7 +75,7 @@ export default {
     },
     methods: {
         getProduct (){
-            var id=5;// this.$route.params.id;
+            var id=localStorage.id;
             fetch("https://fakestoreapi.com/products/"+id)
         .then(res=> {
             return res.json()
