@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="product">
         <div class="container">
             <div class="row product d-flex">
                 <div class="col-4 product-image">
@@ -86,6 +86,9 @@
 </script>
 
 <style lang="scss" scoped>
+.product {
+    margin-top: 60px;
+}
 .product-image {
     margin: 108px 0 147px 0;
     img {

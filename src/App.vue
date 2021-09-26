@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <appHeader />
-    <router-view/>
+    <router-view id="rout"/>
     <appFooter />
 
     <div>
@@ -57,11 +57,14 @@ export default {
   border-color: #ff842c !important;
   transition: 0.3s;  
 } 
-  .mt-3:hover{
-      background-color: gray !important;
-      border-color: gray !important;
-      transition: 0.3s;
-  }
+.mt-3:hover{
+    background-color: gray !important;
+    border-color: gray !important;
+    transition: 0.3s;
+}
+#rout {
+  margin-top: 60px;
+}
 
 
 

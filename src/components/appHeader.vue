@@ -45,6 +45,11 @@
     background-color: black;
     color: white;
     height: 60px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    z-index: 200;
 }
 .title-link {
     text-decoration: none;
