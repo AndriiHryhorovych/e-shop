@@ -23,8 +23,9 @@
                             <router-link to="/delivery" class="menu-item">Доставка</router-link>
                         </li>
                         <li>
-                            <router-link to="/cart" class="menu-item">      
+                            <router-link to="/cart" class="menu-item d-flex">      
                                 <img src="@/assets/fluent_cart.png" alt="">
+                                <cartCounter />  
                             </router-link>
                         </li>
                     </ul>
@@ -35,8 +36,11 @@
 </template>
 
 <script>
+    import cartCounter from "@/components/CartCounter.vue";
     export default {
-        
+        components: {
+            cartCounter,
+        }
     }
 </script>
 
