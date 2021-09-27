@@ -44,11 +44,11 @@
 import productItem from "@/components/lists/product-list-item.vue";
 export default {
     data () {
-       return {
-           isLoading: false,
-           categories: [],
-           products: [],
-       };     
+    return {
+        isLoading: false,
+        categories: [],
+        products: [],
+    };     
     },
     computed: {
         currentCategory() {

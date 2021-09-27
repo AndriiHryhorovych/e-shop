@@ -1,6 +1,6 @@
 <template>
 <div>
-    <div v-if="3<2"  class="cart-empty">
+    <div v-if="productInCartID == 0"  class="cart-empty">
         <div class="container">
             <div class="row">
                 <div class="col-12 d-flex flex-column justify-content-center align-items-center">
@@ -60,22 +60,23 @@
 </template>
 
 <script>
-// import productList from '@/components/layout/product-list.vue';
 import productItem from "@/components/lists/product-list-item.vue";
 export default {
     components: {
-        // productList,
         productItem,
+        
     },
      data () {
         return {
             product: {},
             products: [],
+            productInCartID:0,
         };
     },
     methods: {
         getProduct (){
-            var id=5; //window.localStorage.id;
+            this.checkItemsInCart();
+            var id=this.productInCartID;
             fetch("https://fakestoreapi.com/products/"+id)
         .then(res=> {
             return res.json()
@@ -88,7 +89,6 @@ export default {
         },
 
         getProductByCategory () {
-        // console.log(this.product.category)
             fetch("https://fakestoreapi.com/products/category/" + this.product.category + "?limit=4")
         .then((res) => {
             return res.json();
@@ -96,10 +96,20 @@ export default {
         .then(json => {
             this.products = json;
         });
-        }
+        },
+
+        checkItemsInCart(){
+            var items = window.localStorage.getItem('cart');
+            if (items){
+                this.productInCartID = JSON.parse(items).id;
+            }
+        },
     },
     mounted() {
         this.getProduct();
+        setInterval(() =>{
+                this.checkItemsInCart();
+            }, 300)
     }
 }
 </script>
