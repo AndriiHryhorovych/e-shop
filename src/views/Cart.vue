@@ -235,7 +235,7 @@ export default {
             height: 56px;
             flex-grow: 0;
             margin: 18px 0 111px 0;
-            padding: 15px 77px 15px 75px;
+            padding: 15px 20px 15px 20px;
             border-radius: 6px;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);
             background-color: #ff842c !important;

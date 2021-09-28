@@ -29,7 +29,7 @@
                 };
                 window.localStorage.setItem("cart",JSON.stringify(item));
                 this.$bvModal.show("bv-modal-example");
-                alert("Товар додано " + product_id);
+                // alert("Товар додано " + product_id);
             },
         },
     };
