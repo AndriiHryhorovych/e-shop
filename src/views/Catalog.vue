@@ -153,19 +153,25 @@ export default {
         font-weight: 900;
         transition: 0.5s;
     }
+    li:first-letter{
+        text-transform: uppercase;
+    }
     
 }
 .current-category {
     margin: 69px 0;
-  font-family: Roboto;
-  font-size: 36px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: left;
-  color: #000;
+    font-family: Roboto;
+    font-size: 36px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
 }
+.current-category:first-letter{
+        text-transform: uppercase;
+    }
 
 </style>

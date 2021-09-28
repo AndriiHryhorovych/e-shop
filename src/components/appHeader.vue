@@ -6,7 +6,7 @@
                     <router-link to="/" class="title-link">eShop</router-link>
                 </div>
                 <div class="col-4 d-flex search">
-                    <b-nav-form form-class="d-flex">
+                    <b-nav-form form-class="d-flex form-input">
                         <b-form-input size="sm" class="mr-sm-2" placeholder="Пошук"></b-form-input>
                         <b-button size="sm" class="my-2 my-sm-0 search-button" type="submit">Шукати</b-button>
                     </b-nav-form>
@@ -99,5 +99,8 @@
     border-color: #ff842c;
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
+}
+.form-input {
+    width: 372px !important;
 }
 </style>
