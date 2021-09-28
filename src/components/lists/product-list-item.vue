@@ -29,7 +29,6 @@
                 };
                 window.localStorage.setItem("cart",JSON.stringify(item));
                 this.$bvModal.show("bv-modal-example");
-                // alert("Товар додано " + product_id);
             },
         },
     };
@@ -43,7 +42,10 @@
         height: 140px;
     }
     link {
-        text-decoration: none;
+        text-decoration: none !important;
+    }
+    a {
+        text-decoration: none !important;
     }
 }
 
@@ -61,6 +63,18 @@
     letter-spacing: normal;
     text-align: center;
     color: #000;
+    -ms-text-overflow: ellipsis;
+-o-text-overflow: ellipsis;
+text-overflow: ellipsis;
+overflow: hidden;
+-ms-line-clamp: 3;
+-webkit-line-clamp: 3;
+line-clamp: 3;
+display: -webkit-box;
+display: box;
+word-wrap: break-word;
+-webkit-box-orient: vertical;
+box-orient: vertical;
   a {
       text-decoration: none !important;
   }
@@ -69,19 +83,20 @@
     text-decoration: none;
     text-align: center;
     font-family: Roboto;
-  font-size: 22px;
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: center;
-  color: #009d35;
+    font-size: 22px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #009d35;
 }
 .button-to-cart {
     text-align: center;
     .btn {
         height: 56px;
+        width: 191px;
         flex-grow: 0;
         margin: 13px 46px 70px 46px;
         padding: 15px 39px 15px 38px;
