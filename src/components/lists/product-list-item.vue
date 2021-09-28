@@ -53,7 +53,7 @@
     text-decoration-line: none !important;
     height: 42px;
     flex-grow: 0;
-    margin: 37px 20px 25px;
+    margin: 37px 20px 15px;
     font-family: Roboto;
     font-size: 18px;
     font-weight: normal;
@@ -64,17 +64,17 @@
     text-align: center;
     color: #000;
     -ms-text-overflow: ellipsis;
--o-text-overflow: ellipsis;
-text-overflow: ellipsis;
-overflow: hidden;
--ms-line-clamp: 3;
--webkit-line-clamp: 3;
-line-clamp: 3;
-display: -webkit-box;
-display: box;
-word-wrap: break-word;
--webkit-box-orient: vertical;
-box-orient: vertical;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -ms-line-clamp: 2;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    display: -webkit-box;
+    display: box;
+    word-wrap: break-word;
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
   a {
       text-decoration: none !important;
   }
